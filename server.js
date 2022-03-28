@@ -22,7 +22,7 @@ app.get('/app/flips/:number', (req, res) => {
     res.statusCode = 200;
     res.statusMessage = 'OK';
     results = coin.coinFlips(req.params.number)
-    res.json(results)
+    res.json({'raw':results,'summary':coin.countFlips(results)})
 })
 app.get('/app/flip/call/:call', (req, res) => {
     res.statusCode = 200;
