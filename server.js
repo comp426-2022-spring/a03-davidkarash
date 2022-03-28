@@ -27,9 +27,15 @@ app.get('/app/flips/:number', (req, res) => {
 app.get('/app/flip/call/:call', (req, res) => {
     res.statusCode = 200;
     res.statusMessage = 'OK'
-
+    if (req.params.call == 'heads') {
+        res.json(coin.flipACoin('heads'));
+    } else if (req.params.call == 'tails') {
+        res.json(coin.flipACoin('tails'));
+    } else {
+        res.status(404).send('404 NOT FOUND');
+    }
 })
 // Default response for any invalid request
 app.use(function(req, res) {
-    res.status(404).send('404 NOT FOUND')
+    res.status(404).send('404 NOT FOUND');
 })
