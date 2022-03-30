@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "make an api",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "node server.js --port=5555"
   },

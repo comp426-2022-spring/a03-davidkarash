@@ -1,7 +1,7 @@
 import express from 'express';
 import http from 'http';
 import min from 'minimist';
-import { coinFlip, coinFlips, countFlips, flipACoin } from './coin.js';
+import { coinFlip, coinFlips, countFlips, flipACoin } from './coin.mjs';
 const app = express();
 const port = min(process.argv.slice(2))['port'] || 5000
 const server = app.listen(port, () => {
